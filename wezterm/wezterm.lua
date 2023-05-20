@@ -17,10 +17,10 @@ config.underline_position = -4
 -- config.macos_window_background_blur = 20
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
-	left = 1,
-	right = 1,
-	top = 1,
-	bottom = 1,
+	left = 2,
+	right = 2,
+	top = 2,
+	bottom = 0,
 }
 
 -- font

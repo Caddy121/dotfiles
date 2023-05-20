@@ -3,10 +3,10 @@ reload 'user.options'
 reload 'user.keymaps'
 reload 'user.lsp'
 reload 'user.autocommands'
-reload 'user.cmp'
+reload 'user.bufferline'
 reload 'user.colorizer'
-reload 'user.cmp'
 reload 'user.dial'
+reload 'user.emmet-ls'
 reload 'user.inlay-hints'
 reload 'user.neogit'
 reload 'user.neoscroll'
@@ -15,6 +15,7 @@ reload 'user.surround'
 reload 'user.telescope'
 reload 'user.todo-comments'
 reload 'user.treesitter'
+
 
 -- NEOVIDE CONFIG
 if vim.g.neovide then

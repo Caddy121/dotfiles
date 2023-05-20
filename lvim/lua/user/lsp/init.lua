@@ -38,6 +38,8 @@ formatters.setup {
   },
 }
 
+require("lvim.lsp.manager").setup("emmet_ls")
+
 -- lvim.lsp.on_attach_callback = function(client, bufnr)
 -- end
 

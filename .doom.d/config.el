@@ -22,6 +22,25 @@
   (select-frame-set-input-focus (selected-frame)))
 (add-hook 'server-after-make-frame-hook #'my/focus-new-client-frame)
 
+;; (add-to-list 'load-path "~/.doom.d/lsp-bridge/")
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
+;; (require 'lsp-bridge)
+;; (global-lsp-bridge-mode)
+;; (evil-define-key 'insert lsp-bridge-mode-map
+;;   (kbd "Return" nil)
+;;   (kbd "C-e" 'acm-hide))
+;; (setq acm-frame-background-dark-color t)
+;; (map! :leader
+;;       (:prefix-map ("l" . "lsp")
+;;        :desc "Find definition" "d" #'lsp-bridge-find-def
+;;        :desc "Code actions" "a" #'lsp-bridge-code-action
+;;        :desc "Find implementation" "i" #'lsp-bridge-find-impl
+;;        :desc "Find references" "R" #'lsp-bridge-find-references
+;;        :desc "Rename" "r" #'lsp-bridge-rename
+;;        :desc "Restart LSP Bridge" "p" #'lsp-bridge-restart-process
+;;        :desc "Kill all process" "k" #'lsp-bridge-kill-process))
+
 (cond (IS-MAC
        (setq mac-command-modifier       'super
              mac-option-modifier        'meta

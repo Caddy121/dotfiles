@@ -53,3 +53,6 @@
 ;; (package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
 (package! multi-vterm)
 (package! prisma-mode :recipe (:host github :repo "pimeys/emacs-prisma-mode" :branch "main"))
+(package! posframe)
+(package! markdown-mode)
+(package! yasnippet)

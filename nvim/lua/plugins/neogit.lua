@@ -1,5 +1,6 @@
 return {
   "TimUntersberger/neogit",
+  keys = { { "<leader>gg", "<cmd>Neogit<cr>", mode = { "n" }, desc = "Neogit" } },
   config = function()
     require("neogit").setup({
       disable_signs = false,
@@ -29,6 +30,13 @@ return {
         hunk = { "", "" },
       },
       integrations = {
+        {
+          "TimUntersberger/neogit",
+          requires = {
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
+          },
+        },
         diffview = true,
       },
       -- Setting any section to `false` will make the section not render at all
@@ -57,7 +65,6 @@ return {
       },
       -- override/add mappings
       mappings = {
-        -- modify status buffer mappings
         status = {
           ["q"] = "Close",
           ["1"] = "Depth1",
@@ -88,9 +95,6 @@ return {
           ["L"] = "LogPopup",
           ["Z"] = "StashPopup",
           ["b"] = "BranchPopup",
-          -- ["<space>"] = "Stage",
-          -- Removes the default mapping of "s"
-          -- ["s"] = "",
         },
       },
     })
