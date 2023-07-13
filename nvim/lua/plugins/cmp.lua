@@ -41,7 +41,9 @@ return {
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<Tab>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          -- ["<Right>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<CR>"] = function(callback)
+            callback()
+          end,
           ["<C-e>"] = function()
             if cmp.visible() then
               return cmp.close()
@@ -67,6 +69,54 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+
+        -- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        -- ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        -- -- ["<Tab>"] = cmp.mapping.confirm { select = false },
+        -- -- ["<Right>"] = cmp.mapping.confirm { select = false },
+        -- ["<C-e>"] = function()
+        --   if cmp.visible() then
+        --     return cmp.close()
+        --   end
+        --   cmp.complete()
+        -- end,
+        -- ["<down>"] = function(fallback)
+        --   if cmp.visible() then
+        --     cmp.select_next_item()
+        --   else
+        --     fallback()
+        --   end
+        -- end,
+        -- ["<up>"] = function(fallback)
+        --   if cmp.visible() then
+        --     cmp.select_prev_item()
+        --   else
+        --     fallback()
+        --   end
+        -- end,
+        -- ["<CR>"] = function(callback)
+        --   callback()
+        -- end,
+        -- ["<Tab>"] = require("cmp").mapping(function(fallback)
+        --   if cmp.visible() then
+        --     cmp.confirm({
+        --       behavior = cmp.ConfirmBehavior.Insert,
+        --       select = false,
+        --     })
+        --   elseif require("luasnip").expand_or_jumpable() then
+        --     vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+        --   else
+        --     fallback()
+        --   end
+        -- end, { "i", "s" }),
+        -- ["<S-Tab>"] = require("cmp").mapping(function(fallback)
+        --   if require("luasnip").jumpable(-1) then
+        --     vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+        --   else
+        --     fallback()
+        --   end
+        -- end, { "i" }),
+
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
@@ -83,7 +133,7 @@ return {
           end,
         },
         experimental = {
-          ghost_text = false,
+          ghost_text = true,
         },
       }
     end,

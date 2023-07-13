@@ -198,6 +198,30 @@ return {
     end,
   },
 
+  --                                  ╒════════╕
+  --                                    neodim
+  --                                  ╘════════╛
+  {
+    "zbirenbaum/neodim",
+    -- lazy = false,
+    event = "LspAttach",
+    config = function()
+      require("neodim").setup({
+        alpha = 0.5,
+        blend_color = "#000000",
+        update_in_insert = {
+          enable = false,
+          delay = 100,
+        },
+        hide = {
+          virtual_text = true,
+          signs = true,
+          underline = true,
+        },
+      })
+    end,
+  },
+
   --                                 ╒═══════════╕
   --                                   neoscroll
   --                                 ╘═══════════╛
@@ -273,24 +297,6 @@ return {
           Hint = { color = colors.hint },
           Misc = { color = colors.purple },
         },
-      })
-    end,
-  },
-
-  --                                  ╒═════════╕
-  --                                    tabnine
-  --                                  ╘═════════╛
-  {
-    "codota/tabnine-nvim",
-    config = function()
-      require("tabnine").setup({
-        disable_auto_comment = true,
-        accept_keymap = "<S-Tab>",
-        dismiss_keymap = "<S-}>",
-        debounce_ms = 800,
-        suggestion_color = { gui = "#808080", cterm = 244 },
-        excluded_filetypes = { "TelescopePrompt" },
-        log_file_path = nil,
       })
     end,
   },

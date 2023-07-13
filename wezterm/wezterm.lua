@@ -7,8 +7,26 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- colorschemes
+-- config.color_scheme = "Ashes (base16)"
+-- config.color_scheme = "Ayu Light (Gogh)"
+-- config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "DoomOne"
+-- config.color_scheme = 'Dracula (Official)'
+-- config.color_scheme = "Everblush"
+-- config.color_scheme = 'GitHub Dark'
+-- config.color_scheme = 'Gruvbox Material (Gogh)'
+-- config.color_scheme = "Gruvbox Light"
+-- config.color_scheme = "Everblush"
+-- config.color_scheme = "Everforest Dark (Gogh)"
+-- config.color_scheme = "Horizon Dark (base16)"
+-- config.color_scheme = "Horizon Dark (Gogh)"
+-- config.color_scheme = 'Kanagawa (Gogh)'
+-- config.color_scheme = "nightfox"
+config.color_scheme = "OceanicNext (base16)"
+-- config.color_scheme = "Rosé Pine (Gogh)"
+
 -- appearance
-config.color_scheme = "Everforest Dark (Gogh)"
 config.default_cursor_style = "BlinkingBar"
 config.window_decorations = "RESIZE"
 config.underline_thickness = 1
@@ -24,8 +42,13 @@ config.window_padding = {
 }
 
 -- font
-config.font = wezterm.font("JetBrains Mono")
-config.font_size = 13.0
+-- config.font = wezterm.font("Iosevka", { stretch = "SemiExpanded" })
+-- config.font = wezterm.font("Iosevka")
+config.font = wezterm.font("FiraCode Nerd Font")
+-- config.font = wezterm.font("JetBrains Mono")
+-- config.font = wezterm.font("VictorMono Nerd Font")
+-- config.font = wezterm.font("Monoid Nerd Font")
+config.font_size = 12.0
 
 -- preferences
 config.automatically_reload_config = true
